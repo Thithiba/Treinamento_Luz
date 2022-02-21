@@ -45,9 +45,10 @@ void inserirFim(Lista* lista, int valor) {
         no = lista->inicio;
         while (no->proximo != NULL) {
             no = no->proximo;
-            no->proximo = novo;
         }
+        no->proximo = novo;   
     }
+    
     lista->tam++;
 }
 
@@ -74,6 +75,31 @@ void removerValor(Lista* lista, int valor) {
     }
 }
 
+//Remove primeiro no da lista
+void removeInicio(Lista* lista) {
+    No* noARemover = NULL;
+
+    noARemover = lista->inicio;
+    lista->inicio = lista->inicio->proximo;
+    free(noARemover);
+    lista->tam--;
+}
+
+//Remove ultimo no da lista
+void removeUltimo(Lista* lista){
+    No* inicio = lista->inicio;
+    No* noARemover = NULL;
+
+    while (inicio != NULL && inicio->proximo != NULL) {
+        noARemover = inicio->proximo;
+        inicio = inicio->proximo;
+    }
+    if (noARemover) {
+        free(noARemover);
+        lista->tam--;
+    }
+}
+
 //imprimir a lista
 void imprimir(Lista *lista) {
     No* inicio = lista->inicio;
@@ -94,7 +120,7 @@ int main()
     lista.tam = 0;
 
     do {
-        printf("1 - Inserir no inicio\n2 - Imprimir\n3 - Inserir no final\n4 - Remover valor\n5 - Sair\n");
+        printf("1 - Inserir no inicio\n2 - Imprimir\n3 - Inserir no final\n4 - Remover valor\n5 - Remover primeiro no\n6 - Remover ultimo no\n7 - Sair\n");
         scanf_s("%d", &opcao);
         switch (opcao)
         {
@@ -123,6 +149,10 @@ int main()
                 system("cls");
                 break;
             case 5:
+                removeInicio(&lista);
+            case 6:
+                removeUltimo(&lista);
+            case 7:
                 system("cls");
                 printf("Finalizando...\n");
                 break;
@@ -130,7 +160,7 @@ int main()
                 printf("Opcao invalida!\n");
             break;
         }
-    } while (opcao != 5);
+    } while (opcao != 7);
 
     return 0;
 }
