@@ -1,0 +1,40 @@
+﻿<Window x:Class="ProjetoEscola.CadastroUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoEscola"
+        mc:Ignorable="d"
+        Title="Cadastro Aluno" Height="450" Width="735">
+    <Grid HorizontalAlignment="Right" Width="740" Margin="0,0,0,-6">
+        <TextBox HorizontalAlignment="Left" Margin="50,52,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="50,121,0,0" TextWrapping="Wrap" Text="{Binding Data}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="50,190,0,0" TextWrapping="Wrap" Text="{Binding Rg}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="50,270,0,0" TextWrapping="Wrap" Text="{Binding Cpf}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,52,0,0" TextWrapping="Wrap" Text="{Binding NamePai}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,121,0,0" TextWrapping="Wrap" Text="{Binding TelPai}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,190,0,0" TextWrapping="Wrap" Text="{Binding NameMae}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,270,0,0" TextWrapping="Wrap" Text="{Binding TelMae}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox SelectedValuePath="Content" SelectedValue="{Binding Turma}" HorizontalAlignment="Left" Height="25" Margin="536,59,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="1A"/>
+            <ComboBoxItem Content="2A"/>
+            <ComboBoxItem Content="3A"/>
+            <ComboBoxItem Content="4A"/>
+            <ComboBoxItem Content="5A"/>
+            <ComboBoxItem Content="6A"/>
+            <ComboBoxItem Content="7A"/>
+            <ComboBoxItem Content="8A"/>
+            <ComboBoxItem Content="9A"/>
+        </ComboBox>
+        <Button Content="Salvar" HorizontalAlignment="Left" Margin="93,340,0,0" VerticalAlignment="Top" Click="bnt_Salvar"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="50,26,0,0" VerticalAlignment="Top"/>
+        <Label Content="Data Nasc xx/xx/xxxx" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="RG" HorizontalAlignment="Left" Margin="50,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="CPF" HorizontalAlignment="Left" Margin="50,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nome Pai" HorizontalAlignment="Left" Margin="300,26,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tel. Pai" HorizontalAlignment="Left" Margin="300,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nome Mae" HorizontalAlignment="Left" Margin="300,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tel. Mae" HorizontalAlignment="Left" Margin="300,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="Turma" HorizontalAlignment="Left" Margin="536,26,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
