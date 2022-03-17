@@ -1,0 +1,31 @@
+﻿<Window x:Class="ProjetoEscola.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoEscola"
+        mc:Ignorable="d"
+        Title="Eschola" Height="450" Width="800">
+    <Grid>
+        <ListView ItemsSource="{Binding listaFiltrada}"  SelectedItem="{Binding UsuarioSelecionado}" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="169,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Tipo}" Header="Tipo" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Nome" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Data}" Header="Data Nasc." Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Rg}" Header="RG" Width="90"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Cpf}" Header="CPF" Width="90"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Add" Command="{Binding Add}" HorizontalAlignment="Left" Margin="32,21,0,0" VerticalAlignment="Top" Height="60" Width="100"/>
+        <Button Content="Remove" Command="{Binding Remove}" HorizontalAlignment="Left" Margin="32,110,0,0" VerticalAlignment="Top" Height="60" Width="100"/>
+        <Button Content="Edit" Command="{Binding Edit}" HorizontalAlignment="Left" Margin="32,200,0,0" VerticalAlignment="Top" Height="60" Width="100"/>
+        <Button Content="Filtrar" Command="{Binding Filtrar}" HorizontalAlignment="Left" Margin="32,290,0,0" VerticalAlignment="Top" Height="60" Width="100"/>
+        <ComboBox SelectedValuePath="Content" SelectedValue="{Binding dadoTipoCreate}" HorizontalAlignment="Left" Height="25" Margin="22,374,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="Todos"/>
+            <ComboBoxItem Content="Aluno"/>
+            <ComboBoxItem Content="Professor"/>
+        </ComboBox>
+    </Grid>
+</Window>
